@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="path/to/toast.min.css" rel="stylesheet">
+    <script src="path/to/toast.min.js"></script>
+    <style>
+        #main {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #okno {
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            padding: 15px;
+            border: 3px solid #0000cc;
+            border-radius: 10px;
+            color: #0000cc;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+
+        #main:target {
+            display: block;
+        }
+    </style>
+    <title>Подарик</title>
+</head>
+
+<body>
+    <a href="#" id="main">
+        <div id="okno">
+            Всплывающее окошко!
+        </div>
+    </a>
+
+    <a href="#main">Вызвать всплывающее окно</a>
+    <div class="header">
+        <div class="wrapper">
+            <ul class="nav">
+                <li><a style="font-weight: 700;" href="">Подарик</a></li>
+                <li><a onclick="window.scrollBy(0,500)">Почему кружка?</a></li>
+                <li><a onclick="window.scrollBy(0,1000)">Загрузить изображение</a></li>
+                <li><a onclick="window.scrollBy(0,1800)">Выбрать готовую</a></li>
+                <li><a onclick="window.scrollBy(0,2200)">Задать вопрос</a></li>
+                <li><a style="font-weight: 700; margin-left: 250px;" href="">Вход</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="bunner0">
+        <div class="wrapper">
+        </div class="text1">
+        <h1 class="h1">Лучший подарок</h1>
+        <h2 class="h2">Кружка с принтом</h2>
+        <button class="button button5" onclick="window.scrollBy(0,500)" href="#top">Узнать почему</button>
+
+        <img class="big_cup" style="width: 700px;" src="image/big_cup.png">
+    </div>
+    </div>
+    </div>
+    <div class="banner1">
+        <div><a id='top'></div>
+        <div class="wrapper">
+            <h2 class="h2_ban1">Почему кружка с принтом?</h2>
+            <ul class="rk">
+                <li>
+                    <h2>1</h2>
+                    <h3>Практично</h3>
+                    <h4>Пьют все, поэтому ваш подарок не будет пылиться в коробке с хламом</h4>
+                </li>
+                <li>
+                    <h2>2</h2>
+                    <h3>Запомнится</h3>
+                    <h4>Напечатайте что-то оригинальное, весёлое или памятное</h4>
+                </li>
+                <li>
+                    <h2>3</h2>
+                    <h3>Просто</h3>
+                    <h4>Просто отправьте нам изображение или выберите из доступных</h4>
+                </li>
+                <li>
+                    <h2>4</h2>
+                    <h3>Быстро</h3>
+                    <h4>Кружка будет готова и доставлена по вашему адресу через 24 часа</h4>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner2">
+        <div class="wrapper">
+            <div class="text2">
+                <img class="big_cup2" style="width: 450px;" src="image/big_cup.png">
+                <h1 class="h1_2">Просто загрузите картинку</h1>
+                <h2 class="h2_2">и в течении 24 часов мы доставим вам кружку</h2>
+                <button class="button2 button6">Загрузить</button>
+                <h2 class="h2_2_1">или выберите уже готовую кружку</h2>
+            </div>
+        </div>
+    </div>
+    <div class="banner3">
+        <div class="wrapper">
+            <div class="text3">
+                <h1 class="h1_3">Счастье не в деньгах</h1>
+                <h2>Всего 449 р за кружку</h2>
+            </div>
+            <h1 class="h4"> 449 p</h1>
+
+        </div>
+    </div>
+    <div class="banner4">
+        <div class="wrapper">
+            <div class="ban5">
+                <h1 class="text5">Выберите гоовую кружку</h1>
+                <h2 class="text6">При заказе до 14:00 привезём до 18:00</h2>
+
+                <div class="content">
+                    <p><img style="width: 200px; height: 400px;" src="image/кружка-1.svg"></p>
+                    <p><img style="width: 200px; height: 400px;" src="image/кружка-2.svg"></p>
+                    <p><img style="width: 200px; height: 400px;" src="image/кружка-3.svg"></p>
+                    <p><img style="width: 200px; height: 400px;" src="image/кружка-4.svg"></p>
+                    <p><img style="width: 200px; height: 400px;" src="image/кружка-5.svg"></p>
+                </div>
+                <script>
+                    let divScrollEnabled = document.querySelector('.content'),
+                        wheel = "wheel" || "mousewheel" || "MozMousePixelScroll",
+                        scrollToMarg = e => {
+                            e.preventDefault();
+                            ((e.deltaY || e.detail || e.wheelDelta) > 0) ?
+                                divScrollEnabled.scrollLeft += 100 :
+                                divScrollEnabled.scrollLeft -= 100;
+                        };
+                    (divScrollEnabled.addEventListener) ?
+                        divScrollEnabled.addEventListener(wheel, scrollToMarg) :
+                        divScrollEnabled.attachEvent(wheel, scrollToMarg);
+                    window.onunload = () => divScrollEnabled.removeEventListener('mousewheel', scrollToMarg) ||
+                        divScrollEnabled.detachEvent(wheel, scrollToMarg);
+                </script>
+
+            </div>
+        </div>
+    </div>
+    <div class="banner6">
+        <div class="wrapper">
+            <div class="text4">
+                <h1 class="h1_4">Связаться с нами</h1>
+                <div class="H4">
+                    <h2 class="h4_1">+7 (3452) 758-30-08</h2>
+                    <h3 class="h4_2">Телефон, Viber, Whatsapp, Telegram</h3>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="footer">
+        <div class="wrapper">
+            <ul class="rk1">
+                <li>
+                    <p>© 2022 - podarik</p>
+                </li>
+                <li>
+                    <p>Дизайн — Анастасия Арама и Валерия Носова</p>
+                </li>
+            </ul>
+
+
+        </div>
+    </div>
+</body>
+
+</html>

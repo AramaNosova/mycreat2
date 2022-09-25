@@ -1,0 +1,43 @@
+$('.textBox .inner .item').click(function(){
+    $('.textBox .inner .item').removeClass('act');
+    $(this).addClass('act');
+    let elemBase = $('.textBOx .inner').offset().left;
+    elemActive = elemActive - elemBase;
+    $('.textBox .inner').animate({
+        scrollLeft: elemActive
+    }, 100);
+    $('.diag span').text(elemActive);
+}
+
+
+<div class="content">
+    <p><img style="width: 100px; height: 100px;" src="nuha.png"></p>
+    <p><img style="width: 100px; height: 100px;" src="nuha.png"></p>
+    <p><img style="width: 100px; height: 100px;" src="nuha.png"></p>
+    <p><img style="width: 100px; height: 100px;" src="nuha.png"></p>
+    <p><img style="width: 100px; height: 100px;" src="nuha.png"></p>
+</div>
+    <script >
+        let divScrollEnabled=document.querySelector('.content'),
+    wheel="wheel"||"mousewheel"||"MozMousePixelScroll",
+    scrollToMarg=e=>{  
+      e.preventDefault();
+      ((e.deltaY || e.detail || e.wheelDelta)>0)?
+        divScrollEnabled.scrollLeft+=100:
+      divScrollEnabled.scrollLeft-=100;
+    };
+(divScrollEnabled.addEventListener)?
+  divScrollEnabled.addEventListener(wheel, scrollToMarg):
+divScrollEnabled.attachEvent(wheel, scrollToMarg);
+window.onunload=()=>divScrollEnabled.removeEventListener('mousewheel',scrollToMarg)||
+  divScrollEnabled.detachEvent(wheel, scrollToMarg);
+    </script>
+
+
+.content{
+  width: 800px;
+  height: 200px;
+  margin: 50px auto;
+  overflow: auto;
+  column-count: 4;
+}
